@@ -1,9 +1,10 @@
 import { Suspense, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
-
 import { calculators } from "../calculators/calculator.registry";
 import { calculatorComponents } from "../calculators/calculator.components";
 import CalculatorLoader from "../components/CalculatorLoader/CalculatorLoader";
+
+const BASE_URL = "https://calcnest-hub.vercel.app";
 
 const CalculatorPage = () => {
     const { calculatorId } = useParams();
@@ -29,6 +30,15 @@ const CalculatorPage = () => {
                 calculator.description
             );
         }
+
+        // Canonical URL 
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) { 
+            canonical = document.createElement("link"); 
+            canonical.setAttribute("rel", "canonical"); 
+            document.head.appendChild(canonical); 
+        } 
+        canonical.setAttribute("href", `${BASE_URL}${calculator.path}`);
     }, [calculator]);
 
     if (!calculator) {
