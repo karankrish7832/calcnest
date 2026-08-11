@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <main>
             <section>
-                <h1>CalcNest</h1>
+                <h1>CalcNestHub</h1>
                 <p>Your everyday calculator hub</p>
             </section>
             

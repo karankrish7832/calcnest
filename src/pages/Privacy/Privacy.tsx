@@ -13,7 +13,7 @@ const Privacy = () => {
                 <h2>Introduction</h2>
 
                 <p>
-                    Welcome to CalcNest. CalcNest provides
+                    Welcome to CalcNestHub. CalcNestHub provides
                     online calculators and related information
                     to help users perform common calculations.
                 </p>
@@ -28,7 +28,7 @@ const Privacy = () => {
                 <h2>Information We Collect</h2>
 
                 <p>
-                    CalcNest does not currently require users to
+                    CalcNestHub does not currently require users to
                     create an account or provide personal
                     information to use the calculators.
                 </p>
@@ -45,7 +45,7 @@ const Privacy = () => {
                 <p>
                     The values you enter into calculators are
                     processed to generate the requested results.
-                    CalcNest does not currently provide a feature
+                    CalcNestHub does not currently provide a feature
                     for storing your calculator history in a
                     personal account.
                 </p>
@@ -55,7 +55,7 @@ const Privacy = () => {
                 <h2>Third-Party Services</h2>
 
                 <p>
-                    CalcNest may use third-party services for
+                    CalcNestHub may use third-party services for
                     hosting, deployment, security, performance,
                     or other infrastructure purposes.
                 </p>
@@ -82,7 +82,7 @@ const Privacy = () => {
 
                 <p>
                     If you have questions about this Privacy
-                    Policy, please contact the CalcNest team.
+                    Policy, please contact the CalcNestHub team.
                 </p>
             </section>
         </article>

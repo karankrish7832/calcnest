@@ -4,14 +4,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
     <url>
-        <loc>https://calcnest-hub.vercel.app/</loc>
+        <loc>https://CalcNestHub-hub.vercel.app/</loc>
     </url>
 
     <url>
-        <loc>https://calcnest-hub.vercel.app/privacy</loc>
+        <loc>https://CalcNestHub-hub.vercel.app/privacy</loc>
     </url>
 
     <url>
-        <loc>https://calcnest-hub.vercel.app/terms</loc>
+        <loc>https://CalcNestHub-hub.vercel.app/terms</loc>
     </url>
 </urlset>

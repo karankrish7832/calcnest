@@ -13,7 +13,7 @@ const Terms = () => {
                 <h2>Acceptance of Terms</h2>
 
                 <p>
-                    By accessing or using CalcNest, you agree
+                    By accessing or using CalcNestHub, you agree
                     to use the website responsibly and in
                     accordance with these Terms of Use.
                 </p>
@@ -23,7 +23,7 @@ const Terms = () => {
                 <h2>Use of Calculators</h2>
 
                 <p>
-                    CalcNest provides calculators for general
+                    CalcNestHub provides calculators for general
                     informational and educational purposes.
                 </p>
 
@@ -39,14 +39,14 @@ const Terms = () => {
                 <h2>Financial Information</h2>
 
                 <p>
-                    Some CalcNest calculators may relate to
+                    Some CalcNestHub calculators may relate to
                     financial topics such as interest, loans,
                     investments, or savings.
                 </p>
 
                 <p>
                     The information and calculations provided by
-                    CalcNest do not constitute financial, legal,
+                    CalcNestHub do not constitute financial, legal,
                     tax, or investment advice. You should consult
                     an appropriately qualified professional before
                     making financial decisions.
@@ -70,7 +70,7 @@ const Terms = () => {
 
                 <p>
                     We may modify, update, suspend, or discontinue
-                    parts of CalcNest at any time without prior
+                    parts of CalcNestHub at any time without prior
                     notice.
                 </p>
             </section>
@@ -80,7 +80,7 @@ const Terms = () => {
 
                 <p>
                     To the extent permitted by applicable law,
-                    CalcNest and its contributors are not
+                    CalcNestHub and its contributors are not
                     responsible for losses or damages resulting
                     from reliance on calculator results or
                     information provided through the website.

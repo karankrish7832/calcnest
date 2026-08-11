@@ -1,8 +1,8 @@
-# CalcNest
+# CalcNestHub
 
-**CalcNest — All Calculators in One Place**
+**CalcNestHub — All Calculators in One Place**
 
-CalcNest is a modern, extensible calculator platform built with React and TypeScript. It provides simple, easy-to-use calculators with explanations to help users understand the calculations and results.
+CalcNestHub is a modern, extensible calculator platform built with React and TypeScript. It provides simple, easy-to-use calculators with explanations to help users understand the calculations and results.
 
 The project is designed with scalability in mind so that new calculators can be added without restructuring the application.
 
@@ -68,7 +68,7 @@ src/
 
 ## 🧩 Extensible Architecture
 
-CalcNest uses a calculator registry so that calculators can be added independently.
+CalcNestHub uses a calculator registry so that calculators can be added independently.
 
 A new calculator can be introduced by adding its calculator configuration and component without modifying the core sidebar architecture.
 
@@ -117,7 +117,7 @@ Application
     └── SIP             → loaded when needed
 ```
 
-This architecture makes CalcNest easier to scale as more calculators are introduced.
+This architecture makes CalcNestHub easier to scale as more calculators are introduced.
 
 ## 🛠️ Tech Stack
 
@@ -146,13 +146,13 @@ npm --version
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/calcnest.git
+git clone https://github.com/YOUR_USERNAME/CalcNestHub.git
 ```
 
 Move into the project:
 
 ```bash
-cd calcnest
+cd CalcNestHub
 ```
 
 Install dependencies:
@@ -193,7 +193,7 @@ npm run lint
 
 ## 🌐 Deployment
 
-CalcNest is designed to be deployed as a static frontend application.
+CalcNestHub is designed to be deployed as a static frontend application.
 
 Possible hosting platforms include:
 
@@ -214,10 +214,10 @@ The project license will be added before the public production release.
 
 ## 👨‍💻 Project Status
 
-CalcNest is actively being developed.
+CalcNestHub is actively being developed.
 
 The initial version focuses on establishing a scalable calculator architecture before adding a larger collection of calculators.
 
 ---
 
-**CalcNest — All Calculators in One Place**
+**CalcNestHub — All Calculators in One Place**

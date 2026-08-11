@@ -34,12 +34,12 @@ const Header = ({
                 <Link
                     to="/"
                     className={styles.logoLink}
-                    aria-label="CalcNest home"
+                    aria-label="CalcNestHub home"
                     onClick={onLogoClick}
                 >
                     <img
                         src={logo}
-                        alt="CalcNest"
+                        alt="CalcNestHub"
                         className={styles.logo}
                     />
                 </Link>
