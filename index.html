@@ -22,9 +22,11 @@
 
         <meta name="author" content="CalcNestHub" />
 
-        <link rel="icon" href="/favicon.ico" />
-
-        <meta property="og:title" content="CalcNestHub – Free Online Calculators" />
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="CalcNestHub – Free Online Calculators"
+        />
 
         <meta
             property="og:description"
@@ -40,7 +42,28 @@
 
         <meta property="og:site_name" content="CalcNestHub" />
 
-        <meta name="twitter:card" content="summary" />
+        <meta
+            property="og:image"
+            content="https://calcnest-hub.vercel.app/og-image.png"
+        />
+
+        <!-- Twitter / X -->
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+            name="twitter:title"
+            content="CalcNestHub – Free Online Calculators"
+        />
+
+        <meta
+            name="twitter:description"
+            content="Free online calculators for finance, mathematics, health, and everyday calculations."
+        />
+
+        <meta
+            name="twitter:image"
+            content="https://calcnest-hub.vercel.app/og-image.png"
+        />
 
         <!-- Favicon -->
         <link rel="icon" href="/favicon.ico" />
@@ -72,8 +95,13 @@
             href="/apple-touch-icon.png"
         />
     </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+    <body>
+        <div id="root"></div>
+
+        <script
+            type="module"
+            src="/src/main.tsx"
+        ></script>
+    </body>
 </html>
