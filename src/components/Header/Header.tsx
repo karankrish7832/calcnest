@@ -4,14 +4,33 @@ import styles from "./Header.module.css";
 
 interface HeaderProps {
     onLogoClick: () => void;
+    onMenuClick: () => void;
+    isSidebarOpen: boolean;
 }
 
 const Header = ({
     onLogoClick,
+    onMenuClick,
+    isSidebarOpen,
 }: HeaderProps) => {
+    
     return (
         <header className={styles.header}>
             <div className={styles.container}>
+                <button
+                    type="button"
+                    className={styles.menuButton}
+                    onClick={onMenuClick}
+                    aria-label={
+                        isSidebarOpen
+                            ? "Close calculator menu"
+                            : "Open calculator menu"
+                    }
+                    aria-expanded={isSidebarOpen}
+                >
+                    {isSidebarOpen ? "✕" : "☰"}
+                </button>
+
                 <Link
                     to="/"
                     className={styles.logoLink}

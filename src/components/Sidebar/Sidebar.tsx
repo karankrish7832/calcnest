@@ -8,13 +8,16 @@ interface SidebarProps {
     search: string;
     onSearchChange: (value: string) => void;
     onCalculatorClick: () => void;
+    isOpen: boolean;
 }
 
 const Sidebar = ({
     search,
     onSearchChange,
     onCalculatorClick,
+    isOpen
 }: SidebarProps) => {
+    
     const filteredCalculators = useMemo(
         () => searchCalculators(calculators, search),
         [search]
@@ -30,7 +33,7 @@ const Sidebar = ({
     ] as const;
 
     return (
-        <aside className={styles.sidebar}>
+        <aside className={`${styles.sidebar} ${ isOpen ? styles.open : "" }`}>
             <div className={styles.searchContainer}>
                 <input
                     type="search"

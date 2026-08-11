@@ -9,13 +9,60 @@
 
 .main {
     min-width: 0;
-    margin-left: 292px;
-    padding: 32px;
+    min-height: calc(100vh - 96px);
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 768px) {
+.content {
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   Mobile Overlay
+   ================================ */
+
+.overlay {
+    display: none;
+}
+
+
+/* ================================
+   Mobile Layout
+   ================================ */
+
+@media (max-width: 600px) {
+    .body {
+        padding-top: 72px;
+    }
+
     .main {
         margin-left: 0;
+        min-height: calc(100vh - 72px);
+    }
+
+    .content {
         padding: 20px 16px;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 150;
+        cursor: pointer;
     }
 }
