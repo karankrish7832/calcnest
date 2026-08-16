@@ -8,10 +8,12 @@ import CalculatorLayout from "../components/Layout/CalculatorLayout";
 import CalculatorPage from "../pages/CalculatorPage";
 import Privacy from "../pages/Privacy/Privacy";
 import Terms from "../pages/Terms/Terms";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop/>
             <Routes>
                 <Route element={<CalculatorLayout />}>
                     <Route
