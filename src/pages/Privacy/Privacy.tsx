@@ -36,6 +36,14 @@ const Privacy = () => {
                 <p>
                     Calculator values entered by you are used to
                     perform calculations within the application.
+                    These values are not currently stored in a
+                    personal account or used to identify you.
+                </p>
+
+                <p>
+                    When you visit CalcNestHub, certain technical
+                    and usage information may be collected through
+                    third-party services, as described below.
                 </p>
             </section>
 
@@ -52,16 +60,68 @@ const Privacy = () => {
             </section>
 
             <section>
-                <h2>Third-Party Services</h2>
+                <h2>Google Analytics</h2>
 
                 <p>
-                    CalcNestHub may use third-party services for
-                    hosting, deployment, security, performance,
-                    or other infrastructure purposes.
+                    CalcNestHub uses Google Analytics, a web
+                    analytics service provided by Google, to
+                    understand how visitors use our website and
+                    to help us improve its content and functionality.
                 </p>
 
                 <p>
-                    These services may process technical
+                    Google Analytics may collect information such as
+                    pages viewed, interactions with the website,
+                    browser and device information, traffic sources,
+                    and approximate geographic information. Google
+                    Analytics may use cookies or similar technologies
+                    to collect this information.
+                </p>
+
+                <p>
+                    The information collected through Google Analytics
+                    is used for website analytics, performance
+                    measurement, and understanding visitor
+                    engagement. CalcNestHub does not use Google
+                    Analytics to intentionally collect information
+                    that directly identifies you.
+                </p>
+
+                <p>
+                    You can learn more about how Google uses
+                    information from websites that use its services
+                    by visiting Google's privacy information:
+                    {" "}
+                    <a
+                        href="https://policies.google.com/technologies/partner-sites"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        How Google uses information from sites or apps
+                        that use our services
+                    </a>
+                    .
+                </p>
+
+                <p>
+                    You can also manage or disable cookies through
+                    your browser settings. Disabling cookies may
+                    affect certain website functionality or analytics
+                    collection.
+                </p>
+            </section>
+
+            <section>
+                <h2>Third-Party Services</h2>
+
+                <p>
+                    CalcNestHub uses third-party services for
+                    hosting, deployment, analytics, security,
+                    performance, or other infrastructure purposes.
+                </p>
+
+                <p>
+                    These services may process technical or usage
                     information according to their own privacy
                     policies.
                 </p>
