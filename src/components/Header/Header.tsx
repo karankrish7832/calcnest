@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/calcnest-logo.svg";
+import moonIcon from "../../assets/images/moon.svg";
+import sunIcon from "../../assets/images/sun.svg";
+import { useTheme } from "../../context/ThemeContext";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -13,7 +16,8 @@ const Header = ({
     onMenuClick,
     isSidebarOpen,
 }: HeaderProps) => {
-    
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -43,6 +47,35 @@ const Header = ({
                         className={styles.logo}
                     />
                 </Link>
+
+                <button
+                    type="button"
+                    className={`${styles.themeToggle} ${
+                        theme === "dark" ? styles.dark : ""
+                    }`}
+                    onClick={toggleTheme}
+                    aria-label={
+                        theme === "light"
+                            ? "Switch to dark mode"
+                            : "Switch to light mode"
+                    }
+                >
+                    <span className={styles.toggleTrack}>
+                        <span className={styles.toggleIcon}>
+                            <img
+                                src={sunIcon}
+                                alt=""
+                                className={styles.sunIcon}
+                            />
+
+                            <img
+                                src={moonIcon}
+                                alt=""
+                                className={styles.moonIcon}
+                            />
+                        </span>
+                    </span>
+                </button>
             </div>
         </header>
     );

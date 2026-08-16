@@ -7,21 +7,21 @@
 .label {
     font-size: 14px;
     font-weight: 600;
-    color: #374151;
+    color: var(--text-primary);
 }
 
 .inputWrapper {
     display: flex;
     align-items: center;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    background: #ffffff;
+    background: var(--bg-card);
     overflow: hidden;
     transition: border-color 0.15s ease;
 }
 
 .inputWrapper:focus-within {
-    border-color: #6366f1;
+    border-color: var(--brand-blue);
 }
 
 .inputWrapperError {
@@ -35,12 +35,12 @@
     border: 0;
     outline: none;
     background: transparent;
-    color: #111827;
+    color: var(--text-primary);
 }
 
 .affix {
     padding: 0 12px;
-    color: #6b7280;
+    color: var(--text-secondary);
     font-size: 14px;
     white-space: nowrap;
 }
