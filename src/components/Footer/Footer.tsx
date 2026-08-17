@@ -1,23 +1,28 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     const currentYear = new Date().getFullYear();
 
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <p className={styles.copyright}>
-                    © {currentYear} CalcNestHub. All rights reserved.
+                    © {currentYear} CalcNestHub.{" "}
+                    {t("footer.allRightsReserved")}
                 </p>
 
                 <nav className={styles.links}>
                     <Link to="/privacy">
-                        Privacy Policy
+                        {t("footer.privacy")}
                     </Link>
 
                     <Link to="/terms">
-                        Terms of Use
+                        {t("footer.terms")}
                     </Link>
                 </nav>
             </div>

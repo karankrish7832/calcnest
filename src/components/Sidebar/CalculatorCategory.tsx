@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
 import type { Calculator } from "../../calculators/calculator.types";
@@ -18,6 +19,7 @@ const CalculatorCategory = ({
     onCalculatorClick,
 }: CalculatorCategoryProps) => {
 
+    const { t } = useTranslation();
     const location = useLocation();
     const hasActiveCalculator = calculators.some(calculator => calculator.path === location.pathname);
     const [isOpen, setIsOpen] = useState(hasActiveCalculator);
@@ -54,7 +56,7 @@ const CalculatorCategory = ({
                 type="button"
                 onClick={handleToggle}
             >
-                <span>{name}</span>
+                <span>{t(`categories.${name.toLowerCase()}`)}</span>
 
                 <span className={styles.arrow}>
                     {isOpen ? "▲" : "▼"}
@@ -76,7 +78,7 @@ const CalculatorCategory = ({
                                 }`
                             }
                         >
-                            {calculator.name}
+                            {t(`${calculator.translationKey}.name`)}
                         </NavLink>
                     ))}
                 </div>

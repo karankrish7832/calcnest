@@ -3,10 +3,12 @@ import { Navigate, useParams } from "react-router-dom";
 import { calculators } from "../calculators/calculator.registry";
 import { calculatorComponents } from "../calculators/calculator.components";
 import CalculatorLoader from "../components/CalculatorLoader/CalculatorLoader";
+import { useTranslation } from "react-i18next";
 
 const BASE_URL = "https://calcnest-hub.vercel.app";
 
 const CalculatorPage = () => {
+    const { t } = useTranslation();
     const { calculatorId } = useParams();
 
     const calculator = calculators.find(
@@ -14,32 +16,27 @@ const CalculatorPage = () => {
     );
 
     useEffect(() => {
-        if (!calculator) {
-            return;
-        }
+        if (!calculator)  return;
 
-        document.title = `${calculator.name} Calculator – CalcNestHub`;
+        const calculatorTitle = t(`${calculator.translationKey}.title`);
+        const calculatorDescription = t(`${calculator.translationKey}.description`);
+        document.title = `${calculatorTitle} – CalcNestHub`;
 
-        const description = document.querySelector(
-            'meta[name="description"]'
-        );
-
+        const description = document.querySelector('meta[name="description"]');
         if (description) {
-            description.setAttribute(
-                "content",
-                calculator.description
-            );
+            description.setAttribute("content", calculatorDescription);
         }
 
-        // Canonical URL 
+        // Canonical URL
         let canonical = document.querySelector('link[rel="canonical"]');
-        if (!canonical) { 
-            canonical = document.createElement("link"); 
-            canonical.setAttribute("rel", "canonical"); 
-            document.head.appendChild(canonical); 
-        } 
+        if (!canonical) {
+            canonical = document.createElement("link");
+            canonical.setAttribute("rel", "canonical");
+            document.head.appendChild(canonical);
+        }
         canonical.setAttribute("href", `${BASE_URL}${calculator.path}`);
-    }, [calculator]);
+    
+    }, [calculator, t]);
 
     if (!calculator) {
         return <Navigate to="/" replace />;

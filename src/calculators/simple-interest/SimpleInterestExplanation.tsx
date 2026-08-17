@@ -1,136 +1,212 @@
+import { useTranslation } from "react-i18next";
+
 import styles from "./SimpleInterestExplanation.module.css";
 
 const SimpleInterestExplanation = () => {
-    return ( 
-        <article className={styles.explanation}> 
-            <h2>How Simple Interest Is Calculated</h2>
+    const { t } = useTranslation();
+
+    return (
+        <article className={styles.explanation}>
+            <h2>
+                {t(
+                    "calculators.simpleInterest.explanation.title"
+                )}
+            </h2>
 
             <p>
-                Simple interest is a method of calculating interest
-                based only on the original principal amount. It is
-                commonly used for short-term loans, investments,
-                deposits, and other financial calculations where
-                interest does not compound.
+                {t(
+                    "calculators.simpleInterest.explanation.intro1"
+                )}
             </p>
 
             <p>
-                This simple interest calculator calculates both the
-                interest amount and the total amount based on the
-                principal, annual interest rate, and time period.
+                {t(
+                    "calculators.simpleInterest.explanation.intro2"
+                )}
             </p>
 
-            <h3>Simple Interest Formula</h3>
+            <h3>
+                {t(
+                    "calculators.simpleInterest.explanation.formulaTitle"
+                )}
+            </h3>
 
             <p className={styles.formula}>
-                SI = (P × R × T) / 100
+                {t(
+                    "calculators.simpleInterest.explanation.formula"
+                )}
             </p>
 
-            <p>Where:</p>
+            <p>
+                {t(
+                    "calculators.simpleInterest.explanation.where"
+                )}
+            </p>
 
             <ul>
-                <li>P = Principal amount</li>
-                <li>R = Annual interest rate in percent</li>
-                <li>T = Time period in years</li>
-                <li>SI = Simple interest</li>
+                <li>
+                    {t(
+                        "calculators.simpleInterest.explanation.principal"
+                    )}
+                </li>
+
+                <li>
+                    {t(
+                        "calculators.simpleInterest.explanation.rate"
+                    )}
+                </li>
+
+                <li>
+                    {t(
+                        "calculators.simpleInterest.explanation.time"
+                    )}
+                </li>
+
+                <li>
+                    {t(
+                        "calculators.simpleInterest.explanation.simpleInterest"
+                    )}
+                </li>
             </ul>
 
             <p>
-                After calculating the simple interest, the total
-                amount can be calculated using:
+                {t(
+                    "calculators.simpleInterest.explanation.totalAmountIntro"
+                )}
             </p>
 
             <p className={styles.formula}>
-                Total Amount = Principal + Simple Interest
+                {t(
+                    "calculators.simpleInterest.explanation.totalAmountFormula"
+                )}
             </p>
 
-            <h3>Simple Interest Example</h3>
+            <h3>
+                {t(
+                    "calculators.simpleInterest.explanation.exampleTitle"
+                )}
+            </h3>
 
             <p>
-                Suppose you invest ₹1,00,000 at an annual interest
-                rate of 8% for 5 years.
+                {t(
+                    "calculators.simpleInterest.explanation.exampleIntro"
+                )}
             </p>
 
             <p>
-                Using the simple interest formula:
+                {t(
+                    "calculators.simpleInterest.explanation.exampleFormulaIntro"
+                )}
             </p>
 
             <p className={styles.formula}>
-                SI = (1,00,000 × 8 × 5) / 100
+                {t(
+                    "calculators.simpleInterest.explanation.exampleFormula"
+                )}
             </p>
 
             <p>
-                Simple Interest = ₹40,000
-            </p>
-
-            <p>
-                The total amount is:
+                {t(
+                    "calculators.simpleInterest.explanation.exampleInterest"
+                )}
             </p>
 
             <p className={styles.formula}>
-                Total Amount = ₹1,00,000 + ₹40,000
+                {t(
+                    "calculators.simpleInterest.explanation.exampleTotal"
+                )}
             </p>
 
-            <p>
-                <strong>Total Amount = ₹1,40,000</strong>
-            </p>
-
-            <h3>How to Calculate Simple Interest</h3>
+            <h3>
+                {t(
+                    "calculators.simpleInterest.explanation.stepsTitle"
+                )}
+            </h3>
 
             <ol>
                 <li>
-                    Enter the original principal amount.
+                    {t(
+                        "calculators.simpleInterest.explanation.step1"
+                    )}
                 </li>
+
                 <li>
-                    Enter the annual interest rate as a percentage.
+                    {t(
+                        "calculators.simpleInterest.explanation.step2"
+                    )}
                 </li>
+
                 <li>
-                    Enter the time period in years.
+                    {t(
+                        "calculators.simpleInterest.explanation.step3"
+                    )}
                 </li>
+
                 <li>
-                    Apply the simple interest formula to calculate
-                    the interest.
+                    {t(
+                        "calculators.simpleInterest.explanation.step4"
+                    )}
                 </li>
+
                 <li>
-                    Add the interest to the principal to find the
-                    total amount.
+                    {t(
+                        "calculators.simpleInterest.explanation.step5"
+                    )}
                 </li>
             </ol>
 
-            <h3>Frequently Asked Questions</h3>
+            <h3>
+                {t(
+                    "calculators.simpleInterest.explanation.faqTitle"
+                )}
+            </h3>
 
-            <h4>What is simple interest?</h4>
+            <h4>
+                {t(
+                    "calculators.simpleInterest.explanation.faq1Question"
+                )}
+            </h4>
 
             <p>
-                Simple interest is interest calculated only on the
-                original principal amount. The previously earned
-                interest is not added to the principal for future
-                interest calculations.
+                {t(
+                    "calculators.simpleInterest.explanation.faq1Answer"
+                )}
             </p>
 
-            <h4>Does simple interest compound?</h4>
+            <h4>
+                {t(
+                    "calculators.simpleInterest.explanation.faq2Question"
+                )}
+            </h4>
 
             <p>
-                No. Simple interest does not compound. Unlike
-                compound interest, interest is calculated using the
-                original principal throughout the specified period.
+                {t(
+                    "calculators.simpleInterest.explanation.faq2Answer"
+                )}
             </p>
 
-            <h4>What is the formula for simple interest?</h4>
+            <h4>
+                {t(
+                    "calculators.simpleInterest.explanation.faq3Question"
+                )}
+            </h4>
 
             <p>
-                The simple interest formula is SI = (P × R × T) / 100,
-                where P is the principal, R is the annual interest
-                rate, and T is the time period in years.
+                {t(
+                    "calculators.simpleInterest.explanation.faq3Answer"
+                )}
             </p>
 
-            <h4>What is the difference between simple interest and compound interest?</h4>
+            <h4>
+                {t(
+                    "calculators.simpleInterest.explanation.faq4Question"
+                )}
+            </h4>
 
             <p>
-                Simple interest is calculated only on the original
-                principal, while compound interest can be calculated
-                on the principal plus previously accumulated interest.
-                As a result, compound interest can grow faster over
-                longer periods.
+                {t(
+                    "calculators.simpleInterest.explanation.faq4Answer"
+                )}
             </p>
         </article>
     );

@@ -9,9 +9,7 @@ export type CalculatorId =
 
 export interface Calculator {
     id: CalculatorId;
-    name: string;
     category: CalculatorCategory;
-    description: string;
     path: string;
-    keywords: string[];
+    translationKey: string;
 }

@@ -55,7 +55,6 @@
     justify-content: center;
     width: 58px;
     height: 32px;
-    margin-left: auto;
     padding: 0;
     border: 0;
     border-radius: 999px;
@@ -133,6 +132,17 @@
 
 .themeToggle.dark:active .toggleIcon {
     transform: translateX(26px) scale(0.9);
+}
+
+.languageSelector {
+    margin-left: auto;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
 }
 
 

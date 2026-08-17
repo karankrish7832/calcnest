@@ -3,6 +3,8 @@ import logo from "../../assets/images/calcnest-logo.svg";
 import moonIcon from "../../assets/images/moon.svg";
 import sunIcon from "../../assets/images/sun.svg";
 import { useTheme } from "../../context/ThemeContext";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -17,6 +19,7 @@ const Header = ({
     isSidebarOpen,
 }: HeaderProps) => {
     const { theme, toggleTheme } = useTheme();
+    const { t } = useTranslation();
 
     return (
         <header className={styles.header}>
@@ -27,8 +30,8 @@ const Header = ({
                     onClick={onMenuClick}
                     aria-label={
                         isSidebarOpen
-                            ? "Close calculator menu"
-                            : "Open calculator menu"
+                            ? t("header.closeMenu")
+                            : t("header.openMenu")
                     }
                     aria-expanded={isSidebarOpen}
                 >
@@ -38,7 +41,7 @@ const Header = ({
                 <Link
                     to="/"
                     className={styles.logoLink}
-                    aria-label="CalcNestHub home"
+                    aria-label={t("header.home")}
                     onClick={onLogoClick}
                 >
                     <img
@@ -48,34 +51,37 @@ const Header = ({
                     />
                 </Link>
 
-                <button
-                    type="button"
-                    className={`${styles.themeToggle} ${
-                        theme === "dark" ? styles.dark : ""
-                    }`}
-                    onClick={toggleTheme}
-                    aria-label={
-                        theme === "light"
-                            ? "Switch to dark mode"
-                            : "Switch to light mode"
-                    }
-                >
-                    <span className={styles.toggleTrack}>
-                        <span className={styles.toggleIcon}>
-                            <img
-                                src={sunIcon}
-                                alt=""
-                                className={styles.sunIcon}
-                            />
+                <div className={styles.headerActions}>
+                    <LanguageSelector />
+                    <button
+                        type="button"
+                        className={`${styles.themeToggle} ${
+                            theme === "dark" ? styles.dark : ""
+                        }`}
+                        onClick={toggleTheme}
+                        aria-label={
+                            theme === "light"
+                                ? t("header.switchToDark")
+                                : t("header.switchToLight")
+                        }
+                    >
+                        <span className={styles.toggleTrack}>
+                            <span className={styles.toggleIcon}>
+                                <img
+                                    src={sunIcon}
+                                    alt=""
+                                    className={styles.sunIcon}
+                                />
 
-                            <img
-                                src={moonIcon}
-                                alt=""
-                                className={styles.moonIcon}
-                            />
+                                <img
+                                    src={moonIcon}
+                                    alt=""
+                                    className={styles.moonIcon}
+                                />
+                            </span>
                         </span>
-                    </span>
-                </button>
+                    </button>
+                </div>
             </div>
         </header>
     );

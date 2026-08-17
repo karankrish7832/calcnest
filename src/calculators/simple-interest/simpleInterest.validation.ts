@@ -16,27 +16,21 @@ export const validateSimpleInterest = (
     const time = Number(values.time);
 
     if (!values.principal) {
-        errors.principal =
-            "Principal amount is required.";
+        errors.principal = "calculators.simpleInterest.validation.principalRequired";
     } else if (principal <= 0) {
-        errors.principal =
-            "Principal amount must be greater than 0.";
+        errors.principal = "calculators.simpleInterest.validation.principalGreaterThanZero";
     }
 
     if (!values.rate) {
-        errors.rate =
-            "Interest rate is required.";
+        errors.rate = "calculators.simpleInterest.validation.rateRequired";
     } else if (rate < 0) {
-        errors.rate =
-            "Interest rate cannot be negative.";
+        errors.rate = "calculators.simpleInterest.validation.rateNotNegative";
     }
 
     if (!values.time) {
-        errors.time =
-            "Time period is required.";
+        errors.time = "calculators.simpleInterest.validation.timeRequired";
     } else if (time <= 0) {
-        errors.time =
-            "Time period must be greater than 0.";
+        errors.time = "calculators.simpleInterest.validation.timeGreaterThanZero";
     }
 
     return errors;

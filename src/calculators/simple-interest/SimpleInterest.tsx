@@ -1,22 +1,18 @@
 import { useState } from "react";
-
 import InputField from "../../components/InputField/InputField";
 import ResultCard from "../../components/ResultCard/ResultCard";
-
 import SimpleInterestExplanation from "./SimpleInterestExplanation";
-
 import type {
     SimpleInterestForm,
     SimpleInterestResult,
 } from "./simpleInterest.types";
-
 import { calculateSimpleInterest } from "./simpleInterest.utils";
 import {
     validateSimpleInterest,
     type SimpleInterestErrors,
 } from "./simpleInterest.validation";
 import { formatCurrency } from "../../utils/formatCurrency";
-
+import { useTranslation } from "react-i18next";
 import styles from "./SimpleInterest.module.css";
 
 const initialValues: SimpleInterestForm = {
@@ -26,6 +22,8 @@ const initialValues: SimpleInterestForm = {
 };
 
 const SimpleInterest = () => {
+    const { t } = useTranslation();
+
     const [values, setValues] =
         useState<SimpleInterestForm>(initialValues);
 
@@ -75,12 +73,10 @@ const SimpleInterest = () => {
         <div className={styles.page}>
             <section className={styles.calculator}>
                 <div className={styles.header}>
-                    <h1>Simple Interest Calculator</h1>
+                    <h1>{t("calculators.simpleInterest.title")}</h1>
 
                     <p>
-                        Calculate simple interest and total
-                        amount based on principal, interest
-                        rate, and time.
+                        {t("calculators.simpleInterest.description")}
                     </p>
                 </div>
 
@@ -91,50 +87,50 @@ const SimpleInterest = () => {
                     <InputField
                         id="principal"
                         name="principal"
-                        label="Principal Amount"
+                        label={t("calculators.simpleInterest.principalAmount")}
+                        placeholder={t("calculators.simpleInterest.enterAmount")}
                         type="number"
                         min="0"
                         step="any"
-                        placeholder="Enter amount"
                         prefix="₹"
                         value={values.principal}
                         onChange={handleChange}
-                        error={errors.principal}
+                        error={errors.principal ? t(errors.principal) : undefined}
                     />
 
                     <InputField
                         id="rate"
                         name="rate"
-                        label="Interest Rate"
+                        label={t("calculators.simpleInterest.interestRate")}
+                        placeholder={t("calculators.simpleInterest.enterRate")}
                         type="number"
                         min="0"
                         step="any"
-                        placeholder="Enter rate"
                         suffix="%"
                         value={values.rate}
                         onChange={handleChange}
-                        error={errors.rate}
+                        error={errors.rate ? t(errors.rate) : undefined}
                     />
 
                     <InputField
                         id="time"
                         name="time"
-                        label="Time Period"
+                        label={t("calculators.simpleInterest.timePeriod")}
+                        placeholder={t("calculators.simpleInterest.enterYears")}
                         type="number"
                         min="0"
                         step="any"
-                        placeholder="Enter years"
                         suffix="years"
                         value={values.time}
                         onChange={handleChange}
-                        error={errors.time}
+                        error={errors.time ? t(errors.time) : undefined}
                     />
 
                     <button
                         className={styles.calculateButton}
                         type="submit"
                     >
-                        Calculate Interest
+                        {t("calculators.simpleInterest.calculateInterest")}
                     </button>
                 </form>
 
@@ -142,11 +138,11 @@ const SimpleInterest = () => {
                     <ResultCard
                     results={[
                         {
-                            label: "Simple Interest",
+                            label: t("calculators.simpleInterest.simpleInterest"),
                             value: formatCurrency(result.interest),
                         },
                         {
-                            label: "Total Amount",
+                            label: t("calculators.simpleInterest.totalAmount"),
                             value: formatCurrency(result.totalAmount),
                         },
                     ]}

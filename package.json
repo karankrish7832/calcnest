@@ -4,15 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-      "dev": "vite",
-      "generate:sitemap": "tsc -p tsconfig.scripts.json && tsx scripts/generate-sitemap.ts",
-      "build": "npm run generate:sitemap && tsc -b && vite build",
-      "lint": "eslint .",
-      "preview": "vite preview"
+    "dev": "vite",
+    "generate:sitemap": "tsc -p tsconfig.scripts.json && tsx scripts/generate-sitemap.ts",
+    "build": "npm run generate:sitemap && tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^26.3.6",
+    "i18next-browser-languagedetector": "^8.2.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-i18next": "^17.0.11",
     "react-router-dom": "^7.18.2"
   },
   "devDependencies": {

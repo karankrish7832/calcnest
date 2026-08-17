@@ -1,8 +1,10 @@
+import i18n from "../i18n/i18n";
 import type { Calculator } from "./calculator.types";
 
 export const searchCalculators = (
     calculators: Calculator[],
-    searchTerm: string
+    searchTerm: string,
+    language: string
 ): Calculator[] => {
     const term = searchTerm.trim().toLowerCase();
 
@@ -11,12 +13,37 @@ export const searchCalculators = (
     }
 
     return calculators.filter((calculator) => {
+        const translatedName = i18n.t(
+            `${calculator.translationKey}.name`,
+            { lng: language }
+        );
+
+        const translatedDescription = i18n.t(
+            `${calculator.translationKey}.description`,
+            { lng: language }
+        );
+
+        const translatedCategory = i18n.t(
+            `categories.${calculator.category.toLowerCase()}`,
+            { lng: language }
+        );
+
+        const keywords = i18n.t(
+            `${calculator.translationKey}.keywords`,
+            {
+                lng: language,
+                returnObjects: true,
+            }
+        ) as string[];
+
         const searchableText = [
-            calculator.name,
-            calculator.category,
-            calculator.description,
-            ...calculator.keywords,
-        ].join(" ").toLowerCase();
+            translatedName,
+            translatedDescription,
+            translatedCategory,
+            ...keywords,
+        ]
+            .join(" ")
+            .toLowerCase();
 
         return searchableText.includes(term);
     });

@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { calculators } from "../../calculators/calculator.registry";
 import CalculatorCategory from "./CalculatorCategory";
 import { searchCalculators } from "../../calculators/calculator.search";
+import { useTranslation } from "react-i18next";
 import styles from "./Sidebar.module.css";
 
 interface SidebarProps {
@@ -17,10 +18,12 @@ const Sidebar = ({
     onCalculatorClick,
     isOpen
 }: SidebarProps) => {
+
+    const { t, i18n } = useTranslation();
     
     const filteredCalculators = useMemo(
-        () => searchCalculators(calculators, search),
-        [search]
+        () => searchCalculators(calculators, search, i18n.language),
+        [search, i18n.language]
     );
 
     const isSearching = search.trim().length > 0;
@@ -38,7 +41,7 @@ const Sidebar = ({
                 <input
                     type="search"
                     className={styles.searchInput}
-                    placeholder="Search calculators..."
+                    placeholder={t("sidebar.searchPlaceholder")}
                     value={search}
                     onChange={(event) =>
                         onSearchChange(event.target.value)

@@ -1,99 +1,108 @@
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 import styles from "./Terms.module.css";
 
 const Terms = () => {
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        document.title = `${t("terms.title")} – CalcNestHub`;
+    }, [t]);
+
     return (
         <article className={styles.page}>
-            <h1>Terms of Use</h1>
+            <h1>{t("terms.title")}</h1>
 
             <p className={styles.updated}>
-                Last updated: August 2026
+                {t("terms.lastUpdated")}
             </p>
 
             <section>
-                <h2>Acceptance of Terms</h2>
+                <h2>
+                    {t("terms.acceptanceOfTerms.title")}
+                </h2>
 
                 <p>
-                    By accessing or using CalcNestHub, you agree
-                    to use the website responsibly and in
-                    accordance with these Terms of Use.
+                    {t(
+                        "terms.acceptanceOfTerms.paragraph"
+                    )}
                 </p>
             </section>
 
             <section>
-                <h2>Use of Calculators</h2>
+                <h2>
+                    {t("terms.useOfCalculators.title")}
+                </h2>
 
                 <p>
-                    CalcNestHub provides calculators for general
-                    informational and educational purposes.
+                    {t(
+                        "terms.useOfCalculators.paragraph1"
+                    )}
                 </p>
 
                 <p>
-                    Calculator results are estimates based on
-                    the information entered by the user. Results
-                    may vary depending on the assumptions,
-                    formulas, rates, and other inputs used.
-                </p>
-            </section>
-
-            <section>
-                <h2>Financial Information</h2>
-
-                <p>
-                    Some CalcNestHub calculators may relate to
-                    financial topics such as interest, loans,
-                    investments, or savings.
-                </p>
-
-                <p>
-                    The information and calculations provided by
-                    CalcNestHub do not constitute financial, legal,
-                    tax, or investment advice. You should consult
-                    an appropriately qualified professional before
-                    making financial decisions.
+                    {t(
+                        "terms.useOfCalculators.paragraph2"
+                    )}
                 </p>
             </section>
 
             <section>
-                <h2>Accuracy</h2>
+                <h2>
+                    {t("terms.financialInformation.title")}
+                </h2>
 
                 <p>
-                    We aim to provide accurate calculations and
-                    useful information, but we do not guarantee
-                    that all results will always be complete,
-                    accurate, or suitable for a particular
-                    purpose.
+                    {t(
+                        "terms.financialInformation.paragraph1"
+                    )}
+                </p>
+
+                <p>
+                    {t(
+                        "terms.financialInformation.paragraph2"
+                    )}
                 </p>
             </section>
 
             <section>
-                <h2>Availability</h2>
+                <h2>{t("terms.accuracy.title")}</h2>
 
                 <p>
-                    We may modify, update, suspend, or discontinue
-                    parts of CalcNestHub at any time without prior
-                    notice.
+                    {t("terms.accuracy.paragraph")}
                 </p>
             </section>
 
             <section>
-                <h2>Limitation of Liability</h2>
+                <h2>{t("terms.availability.title")}</h2>
 
                 <p>
-                    To the extent permitted by applicable law,
-                    CalcNestHub and its contributors are not
-                    responsible for losses or damages resulting
-                    from reliance on calculator results or
-                    information provided through the website.
+                    {t("terms.availability.paragraph")}
                 </p>
             </section>
 
             <section>
-                <h2>Changes to These Terms</h2>
+                <h2>
+                    {t(
+                        "terms.limitationOfLiability.title"
+                    )}
+                </h2>
 
                 <p>
-                    These Terms of Use may be updated from time
-                    to time. Changes will be published on this
-                    page.
+                    {t(
+                        "terms.limitationOfLiability.paragraph"
+                    )}
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    {t("terms.changesToTerms.title")}
+                </h2>
+
+                <p>
+                    {t("terms.changesToTerms.paragraph")}
                 </p>
             </section>
         </article>
