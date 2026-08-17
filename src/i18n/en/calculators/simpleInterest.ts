@@ -98,22 +98,33 @@ const simpleInterest = {
 
         faqTitle: "Frequently Asked Questions",
 
-        faq1Question: "What is simple interest?",
-        faq1Answer:
-            "Simple interest is interest calculated only on the original principal amount. The previously earned interest is not added to the principal for future interest calculations.",
-
-        faq2Question: "Does simple interest compound?",
-        faq2Answer:
-            "No. Simple interest does not compound. Unlike compound interest, interest is calculated using the original principal throughout the specified period.",
-
-        faq3Question: "What is the formula for simple interest?",
-        faq3Answer:
-            "The simple interest formula is SI = (P × R × T) / 100, where P is the principal, R is the annual interest rate, and T is the time period in years.",
-
-        faq4Question:
-            "What is the difference between simple interest and compound interest?",
-        faq4Answer:
-            "Simple interest is calculated only on the original principal, while compound interest can be calculated on the principal plus previously accumulated interest. As a result, compound interest can grow faster over longer periods.",
+        faqs: [
+            {
+                id: 1,
+                question: "What is simple interest?",
+                answer:
+                    "Simple interest is interest calculated only on the original principal amount. The previously earned interest is not added to the principal for future interest calculations.",
+            },
+            {
+                id: 2,
+                question: "Does simple interest compound?",
+                answer:
+                    "No. Simple interest does not compound. Unlike compound interest, interest is calculated using the original principal throughout the specified period.",
+            },
+            {
+                id: 3,
+                question: "What is the formula for simple interest?",
+                answer:
+                    "The simple interest formula is SI = (P × R × T) / 100, where P is the principal, R is the annual interest rate, and T is the time period in years.",
+            },
+            {
+                id: 4,
+                question:
+                    "What is the difference between simple interest and compound interest?",
+                answer:
+                    "Simple interest is calculated only on the original principal, while compound interest can be calculated on the principal plus previously accumulated interest. As a result, compound interest can grow faster over longer periods.",
+            },
+        ],
     },
 };
 

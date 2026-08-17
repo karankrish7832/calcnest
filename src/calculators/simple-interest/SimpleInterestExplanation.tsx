@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import Accordion from "../../components/Accordion/Accordion";
 import styles from "./SimpleInterestExplanation.module.css";
 
 const SimpleInterestExplanation = () => {
     const { t } = useTranslation();
+    const [openFaqId, setOpenFaqId] = useState<number | null>(1);
 
     return (
         <article className={styles.explanation}>
@@ -161,53 +163,34 @@ const SimpleInterestExplanation = () => {
                 )}
             </h3>
 
-            <h4>
-                {t(
-                    "calculators.simpleInterest.explanation.faq1Question"
-                )}
-            </h4>
-
-            <p>
-                {t(
-                    "calculators.simpleInterest.explanation.faq1Answer"
-                )}
-            </p>
-
-            <h4>
-                {t(
-                    "calculators.simpleInterest.explanation.faq2Question"
-                )}
-            </h4>
-
-            <p>
-                {t(
-                    "calculators.simpleInterest.explanation.faq2Answer"
-                )}
-            </p>
-
-            <h4>
-                {t(
-                    "calculators.simpleInterest.explanation.faq3Question"
-                )}
-            </h4>
-
-            <p>
-                {t(
-                    "calculators.simpleInterest.explanation.faq3Answer"
-                )}
-            </p>
-
-            <h4>
-                {t(
-                    "calculators.simpleInterest.explanation.faq4Question"
-                )}
-            </h4>
-
-            <p>
-                {t(
-                    "calculators.simpleInterest.explanation.faq4Answer"
-                )}
-            </p>
+            {(
+                t(
+                    "calculators.simpleInterest.explanation.faqs",
+                    {
+                        returnObjects: true,
+                    }
+                ) as {
+                    question: string;
+                    answer: string;
+                    id: number
+                }[]
+            ).map((faq) => (
+                <Accordion
+                    key={faq.question}
+                    title={faq.question}
+                    exclusive
+                    isOpen={openFaqId === faq.id}
+                    onToggle={() =>
+                        setOpenFaqId(
+                            openFaqId === faq.id
+                                ? null
+                                : faq.id
+                        )
+                    }
+                >
+                    <p>{faq.answer}</p>
+                </Accordion>
+            ))}
         </article>
     );
 };
