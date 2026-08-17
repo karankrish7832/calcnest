@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/calcnest-logo.svg";
+import mobileLogo from "../../assets/images/calcnest-mobile-logo.png";
 import moonIcon from "../../assets/images/moon.svg";
 import sunIcon from "../../assets/images/sun.svg";
 import { useTheme } from "../../context/ThemeContext";
@@ -44,11 +45,18 @@ const Header = ({
                     aria-label={t("header.home")}
                     onClick={onLogoClick}
                 >
-                    <img
-                        src={logo}
-                        alt="CalcNestHub"
-                        className={styles.logo}
-                    />
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcSet={mobileLogo}
+                        />
+
+                        <img
+                            src={logo}
+                            alt="CalcNestHub"
+                            className={styles.logo}
+                        />
+                    </picture>
                 </Link>
 
                 <div className={styles.headerActions}>
