@@ -24,8 +24,9 @@ const common = {
     categories: {
         financial: "நிதி",
         math: "கணிதம்",
-        health: "ஆரோக்கியம்",
-    },
+        health: "உடல்நலம்",
+        everyday: "அன்றாடம்",
+    }
 };
 
 export default common;

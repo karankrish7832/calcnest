@@ -1,0 +1,16 @@
+.container {
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.container h1 {
+    margin: 0 0 12px;
+    font-size: 28px;
+    color: var(--text-primary);
+}
+
+.container p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}

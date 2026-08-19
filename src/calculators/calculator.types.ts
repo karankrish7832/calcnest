@@ -5,7 +5,17 @@ export type CalculatorCategory =
     | "Everyday";
 
 export type CalculatorId =
-    | "simple-interest";
+    | "simple-interest"
+    | "compound-interest"
+    | "emi"
+    | "loan"
+    | "sip"
+    | "fd"
+    | "percentage"
+    | "average"
+    | "bmi"
+    | "age"
+    | "unit-converter";
 
 export interface Calculator {
     id: CalculatorId;

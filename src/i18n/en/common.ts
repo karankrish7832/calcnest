@@ -25,6 +25,7 @@ const common = {
         financial: "Financial",
         math: "Math",
         health: "Health",
+        everyday: "Everyday",
     },
 };
 
