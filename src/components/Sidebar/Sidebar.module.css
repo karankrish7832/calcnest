@@ -17,6 +17,7 @@
     background: var(--bg-primary);
 
     z-index: 90;
+    overflow: hidden;
 }
 
 
