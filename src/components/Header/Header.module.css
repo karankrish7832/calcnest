@@ -134,15 +134,14 @@
     transform: translateX(26px) scale(0.9);
 }
 
-.languageSelector {
-    margin-left: auto;
-}
-
 .headerActions {
     display: flex;
     align-items: center;
-    gap: 16px;
     margin-left: auto;
+}
+
+.desktopLanguage {
+    display: block;
 }
 
 
@@ -156,14 +155,31 @@
     }
 
     .container {
-        padding: 0 14px;
+        padding: 0 10px;
     }
 
     .menuButton {
         display: flex;
+        flex-shrink: 0;
     }
 
     .logo {
         width: 45px;
+    }
+
+    .headerActions {
+        gap: 8px;
+    }
+
+    .headerActions :global(*) {
+        max-width: 100%;
+    }
+
+    .headerActions {
+        margin-left: auto;
+    }
+
+    .desktopLanguage {
+        display: none;
     }
 }

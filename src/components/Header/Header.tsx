@@ -5,7 +5,6 @@ import moonIcon from "../../assets/images/moon.svg";
 import sunIcon from "../../assets/images/sun.svg";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
-import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -60,7 +59,6 @@ const Header = ({
                 </Link>
 
                 <div className={styles.headerActions}>
-                    <LanguageSelector />
                     <button
                         type="button"
                         className={`${styles.themeToggle} ${

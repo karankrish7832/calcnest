@@ -31,8 +31,10 @@ const InputField = ({
                     error ? styles.inputWrapperError : ""
                 }`}
             >
-                {prefix && (
-                    <span className={styles.affix}>
+               {prefix && (
+                    <span
+                        className={`${styles.affix} ${styles.prefixAffix}`}
+                    >
                         {prefix}
                     </span>
                 )}

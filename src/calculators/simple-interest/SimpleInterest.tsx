@@ -13,6 +13,9 @@ import {
 } from "./simpleInterest.validation";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { useTranslation } from "react-i18next";
+import { useCountry } from "../../context/CountryContext";
+import { useLocalizedNumberInput } from "../../hooks/useLocalizedNumberInput";
+import { getCurrencyFormatInfo } from "../../utils/currencyFormat";
 import styles from "./SimpleInterest.module.css";
 
 const initialValues: SimpleInterestForm = {
@@ -23,6 +26,10 @@ const initialValues: SimpleInterestForm = {
 
 const SimpleInterest = () => {
     const { t } = useTranslation();
+    const { country } = useCountry();
+
+    const currencyFormat =
+        getCurrencyFormatInfo(country);
 
     const [values, setValues] =
         useState<SimpleInterestForm>(initialValues);
@@ -32,6 +39,27 @@ const SimpleInterest = () => {
 
     const [result, setResult] =
         useState<SimpleInterestResult | null>(null);
+
+    const currencyAffix =
+        currencyFormat.currencyPosition === "prefix"
+            ? `${currencyFormat.currencySymbol}${currencyFormat.currencySpacing}`
+            : `${currencyFormat.currencySpacing}${currencyFormat.currencySymbol}`;
+
+    const principalInput = useLocalizedNumberInput({
+        value: values.principal,
+        locale: country.locale,
+        onChange: (value) => {
+            setValues((current) => ({
+                ...current,
+                principal: value,
+            }));
+
+            setErrors((current) => ({
+                ...current,
+                principal: undefined,
+            }));
+        },
+    });
 
     const handleChange = (
         event: React.ChangeEvent<HTMLInputElement>
@@ -87,15 +115,31 @@ const SimpleInterest = () => {
                     <InputField
                         id="principal"
                         name="principal"
-                        label={t("calculators.simpleInterest.principalAmount")}
-                        placeholder={t("calculators.simpleInterest.enterAmount")}
-                        type="number"
-                        min="0"
-                        step="any"
-                        prefix="₹"
-                        value={values.principal}
-                        onChange={handleChange}
-                        error={errors.principal ? t(errors.principal) : undefined}
+                        label={t(
+                            "calculators.simpleInterest.principalAmount"
+                        )}
+                        placeholder={t(
+                            "calculators.simpleInterest.enterAmount"
+                        )}
+                        type="text"
+                        inputMode="decimal"
+                        prefix={
+                            currencyFormat.currencyPosition === "prefix"
+                                ? currencyAffix
+                                : undefined
+                        }
+                        suffix={
+                            currencyFormat.currencyPosition === "suffix"
+                                ? currencyAffix
+                                : undefined
+                        }
+                        value={principalInput.displayValue}
+                        onChange={principalInput.handleChange}
+                        error={
+                            errors.principal
+                                ? t(errors.principal)
+                                : undefined
+                        }
                     />
 
                     <InputField
@@ -136,17 +180,27 @@ const SimpleInterest = () => {
 
                 {result && (
                     <ResultCard
-                    results={[
-                        {
-                            label: t("calculators.simpleInterest.simpleInterest"),
-                            value: formatCurrency(result.interest),
-                        },
-                        {
-                            label: t("calculators.simpleInterest.totalAmount"),
-                            value: formatCurrency(result.totalAmount),
-                        },
-                    ]}
-                />
+                        results={[
+                            {
+                                label: t(
+                                    "calculators.simpleInterest.simpleInterest"
+                                ),
+                                value: formatCurrency(
+                                    result.interest,
+                                    country
+                                ),
+                            },
+                            {
+                                label: t(
+                                    "calculators.simpleInterest.totalAmount"
+                                ),
+                                value: formatCurrency(
+                                    result.totalAmount,
+                                    country
+                                ),
+                            },
+                        ]}
+                    />
                 )}
             </section>
 

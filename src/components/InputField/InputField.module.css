@@ -45,6 +45,11 @@
     white-space: nowrap;
 }
 
+.prefixAffix {
+    padding-left: 12px;
+    padding-right: 0px;
+}
+
 .error {
     margin: 0;
     font-size: 12px;
